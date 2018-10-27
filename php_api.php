@@ -6,12 +6,13 @@
 <html>
 <head>
 	<title>Data</title>
+	<link rel="stylesheet" href="php_api.css">
 </head>
 <body>
-	<a href="form.php">+ Tambah Data</a>
-	<table align="center" border="1" width="70%">
+	<a href="form.php" class="add">+ Tambah Data</a>
+	<table align="center" width="70%">
 		<tr>
-			<td colspan="6">
+			<td colspan="6" style="background-color: #2196F3; color: #fff">
 				<h3><center>DATA</center></h3>
 			</td>
 		</tr>
@@ -23,11 +24,10 @@
 			<th>Fullname</th>
 			<th>Action</th>
 		</tr>
-			<?php
-
-				$qry = mysqli_query($koneksi,"SELECT * FROM siswa");
-				while($data = mysqli_fetch_array($qry)){
-			 ?>
+		<?php
+			$qry = mysqli_query($koneksi,"SELECT * FROM siswa");
+			while($data = mysqli_fetch_array($qry)){
+		 ?>
 		<tr>
 			<td align="center"><?php echo $data['id']; ?></td>
 			<td><?php echo $data['username']; ?></td>
@@ -35,12 +35,11 @@
 			<td><?php echo $data['level']; ?></td>
 			<td><?php echo $data['fullname']; ?></td>
 			<td align="center">
-				<a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a>
-				<a href="delete.php?id=<?php echo $data['id']; ?>">Delete</a>
+				<a href="edit.php?id=<?php echo $data['id']; ?>">Ubah</a>
+				<a href="delete.php?id=<?php echo $data['id']; ?>"><span style="color: #C62828;">Hapus</span></a>
 			</td>
 		</tr>
-
-	<?php } ?>
+		<?php } ?>
 	</table>
 </body>
 </html>

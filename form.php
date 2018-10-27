@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Lulu Irman Permana</title>
+    <link rel="stylesheet" href="form.css">
   </head>
   <body>
     <form method="post" action="simpan.php">
-      <table>
+      <table align="center">
+        <tr>
+    			<td colspan="2" style="background-color: #2196F3; color: #fff">
+    				<h3><center>DATA</center></h3>
+    			</td>
+    		</tr>
         <tr>
           <td>ID</td>
           <td><input type="text" name="id"></td>
@@ -32,7 +38,9 @@
           <td><input type="text" name="fullname"></td>
         </tr>
         <tr>
-          <td><button type="submit" value="simpan">SIMPAN</button></td>
+          <td colspan="2">
+            <center><button type="submit" value="simpan">SIMPAN</button></center>
+          </td>
         </tr>
       </table>
     </form>
